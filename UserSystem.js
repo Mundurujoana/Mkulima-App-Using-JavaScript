@@ -12,13 +12,13 @@ class Mkulima {
       this.farms.splice(this.farms.findIndex(item=>item.farmId===farmId), 1);
       }
 //updateFarm
-      this.updateFarm = (farm1Id,farmId, name, farmer, phone, address) => {
-          let upFarm=this.farms.find(item=>item.farmId===farm1Id)
-          upFarm.farmId=farmId;
-          upFarm.name=name;
-        upFarm.farmer=farmer;
-      upFarm.phone=phone;
-    upFarm.address=address;
+      this.updateFarm = (farm1Id,farm2Id, newname, newfarmer, newphone, newaddress) => {
+          let upFarm=this.farms.find(f => f.farm2Id === farm1Id)
+          upFarm.farmId=farm2Id;
+          upFarm.name=newname;
+        upFarm.farmer=newfarmer;
+      upFarm.phone=newphone;
+    upFarm.address=newaddress;
       }
 //getFarm
     this.getFarm = (farmId) => {  
@@ -33,11 +33,11 @@ class Mkulima {
     this.products.splice(this.products.findIndex(item=>item.productId === productId),1);
     }
 //updateProduct
-    this.updateProduct = (productId, name1, name2, price) =>{
+    this.updateProduct = (productId, name1, name2, newprice) =>{
     let upProduct = this.products.find(item=>item.name2=== name1);
     upProduct.productId=productId;
     upProduct.name2=name2; 
-    upProduct.price=price;  
+    upProduct.price=newprice;  
     }
 //getProduct
     this.getProduct = (productId) =>{
@@ -84,7 +84,7 @@ console.log(mkuliApp.products);
 mkuliApp.removeProduct("P203");
 console.log(mkuliApp.products);
 // //updateProduct
-mkuliApp.updateProduct("P202","Soya","Rice","ksh.3000");
+// mkuliApp.updateProduct("P202","Soya","Rice",3000);
 console.log(mkuliApp.products);
 // //getProduct
 mkuliApp.getProduct("P201");
