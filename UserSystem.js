@@ -13,7 +13,7 @@ class Mkulima {
       }
 //updateFarm
       this.updateFarm = (farm1Id,farmId, name, farmer, phone, address) => {
-          let upFarm=this.farms.find(item=>item.farm2Id===farm1Id)
+          let upFarm=this.farms.find(item=>item.farmId===farm1Id)
           upFarm.farmId=farmId;
           upFarm.name=name;
         upFarm.farmer=farmer;
@@ -76,9 +76,9 @@ console.log(mkuliApp.farms);
 
 
 //PRODUCTS
-mkuliApp.addProduct("P201","Beans","ksh.2000");
-mkuliApp.addProduct("P202","Rice","ksh.3000");
-mkuliApp.addProduct("P203","Ugali","ksh.4000");
+mkuliApp.addProduct("P201","Beans",2000);
+mkuliApp.addProduct("P202","Rice",3000);
+mkuliApp.addProduct("P203","Ugali",4000);
 console.log(mkuliApp.products);
 // //removeProduct
 mkuliApp.removeProduct("P203");
@@ -92,5 +92,5 @@ console.log(mkuliApp.products);
 // //printProducts
 mkuliApp.printProducts();
 // //calculateOrderCost
-mkuliApp.calculateOrderCost("P201","5");
+mkuliApp.calculateOrderCost("P201",5);
 console.log(mkuliApp.products);
